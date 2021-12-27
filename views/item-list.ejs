@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("./partials/head.ejs") %>
+	<body>
+		<%- include("./partials/nav.ejs") %>
+
+		<h1 class="main-header">Items</h1>
+
+		<% items.forEach(item => { %>
+		<h3 class="item"><a href="<%= item.url%>""><%= item.name %></a></h3>
+		<% }); %>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("./partials/head.ejs")%>
+	<body>
+		<%- include("./partials/nav.ejs")%>
+
+		<h1 class="main-header">Categories</h1>
+
+		<% categories.forEach((category)=> { %>
+		<h3 class="category">
+			<a href="<%= category.url %> "><%= category.name %></a>
+		</h3>
+		<% }); %>
+	</body>
+</html>

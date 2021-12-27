@@ -1,0 +1,86 @@
+body {
+	margin: 0;
+}
+
+.logo {
+	height: 50px;
+	width: 50px;
+}
+
+.navbar {
+	display: flex;
+	background-color: black;
+	outline: 1px solid black;
+	padding: 5px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar-list {
+	display: flex;
+}
+
+.navbar-list__item {
+	list-style: none;
+	margin: 0px 5px;
+	border-radius: 15px;
+	padding: 7px;
+	background-color: #3d478e;
+}
+
+.navbar-list__item:hover {
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+ul,
+li {
+	list-style: none;
+	padding: 0;
+}
+
+li > a {
+	color: white;
+}
+
+.navbar-list__item--divider {
+	border: none;
+	background-color: black;
+	color: white;
+}
+
+.navbar-list__item:nth-last-child(1),
+.navbar-list__item:nth-last-child(2) {
+	background-color: #db261d;
+}
+
+.main-header,
+.category,
+.category-description,
+.item,
+.category-itemlist__item,
+.item-detail,
+.anchor-delete,
+.anchor-wrapper,
+.item-delete-form,
+.category-delete-form,
+.item-form,
+.category-form {
+	display: flex;
+	justify-content: center;
+}
+
+.category-itemlist__item {
+	margin: 10px 0;
+}
+
+.category-form > * {
+	margin: 0px 3px;
+}
+
+.item-form > * {
+	margin: 0px 3px;
+}

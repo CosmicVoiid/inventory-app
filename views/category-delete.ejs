@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("./partials/head.ejs")%>
+	<body>
+		<%- include("./partials/nav.ejs")%>
+
+		<h1 class="main-header"><%= category.name %></h1>
+		<h3 class="category-description"><%= category.description%></h3>
+
+		<% if (items.length > 0) { %>
+		<h3 class="category-delete-form">
+			You must delete all the following item(s) before you can delete the
+			category
+		</h3>
+		<% } %>
+
+		<ul>
+			<% items.forEach(item => { %>
+			<li class="category-itemlist__item"><%= item.name %></li>
+			<% }) %>
+		</ul>
+
+		<% if(items.length === 0) { %>
+		<h3 class="category-delete-form">
+			Are you sure you want to delete this category?
+		</h3>
+		<form class="category-delete-form" method="POST" action="">
+			<input
+				class="form-control"
+				type="hidden"
+				name="categoryId"
+				value="<%= category._id%>"
+				required="true"
+			/>
+
+			<button type="submit">Delete</button>
+		</form>
+		<% } %>
+	</body>
+</html>

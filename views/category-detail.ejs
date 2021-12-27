@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("./partials/head.ejs")%>
+	<body>
+		<%- include("./partials/nav.ejs")%>
+
+		<h1 class="main-header"><%= category.name %></h1>
+		<h3 class="category-description"><%= category.description%></h3>
+
+		<ul>
+			<% items.forEach(item => { %>
+			<li class="category-itemlist__item"><%= item.name %></li>
+			<% }) %>
+		</ul>
+
+		<div class="anchor-wrapper">
+			<a class="anchor-delete" href="<%= category.url %>/update"
+				><button class="btn-delete">Update</button></a
+			>
+			<a class="anchor-delete" href="<%= category.url %>/delete"
+				><button class="btn-delete">Delete</button></a
+			>
+		</div>
+	</body>
+</html>

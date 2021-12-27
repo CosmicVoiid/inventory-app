@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("./partials/head.ejs")%>
+	<body>
+		<%- include("./partials/nav.ejs")%>
+
+		<h1 class="main-header"><%= title%></h1>
+
+		<form class="category-form" action="" method="POST">
+			<label for="name">Category:</label>
+			<input type="text" name="name" id="name" placeholder="name" value="<%=
+			category==undefined ? "" : category.name %>" required="true"/>
+
+			<label for="description">Description:</label>
+			<input type="text" name="description" id="description"
+			placeholder="description" value="<%= category==undefined ? "" :
+			category.description %>" required="true"/>
+
+			<button class="category-form__submit-btn" type="submit">Submit</button>
+		</form>
+
+		<h3><%=category %></h3>
+		<h3><%=category.name %></h3>
+
+		<% if (errors) { %>
+		<ul>
+			<% errors.forEach(error => { %>
+			<li><%= error.msg %></li>
+			<% });%>
+		</ul>
+		<% }; %>
+	</body>
+</html>

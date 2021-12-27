@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("./partials/head.ejs")%>
+	<body>
+		<%- include("./partials/nav.ejs")%>
+
+		<h1 class="main-header"><%= item.name %></h1>
+		<h3 class="item-detail item-detail-category"><%= category%></h3>
+		<p class="item-detail item-detail-description"><%= item.description%></p>
+		<p class="item-detail item-detail-price">Price: <%= item.price%></p>
+		<p class="item-detail item-detail-stock">In Stock:<%= item.in_stock %></p>
+
+		<div class="anchor-wrapper">
+			<a class="anchor-delete" href="<%= item.url%>/update"
+				><button class="btn btn-update">Update</button></a
+			>
+			<a class="anchor-delete" href="<%= item.url%>/delete"
+				><button class="btn btn-delete">Delete</button></a
+			>
+		</div>
+	</body>
+</html>

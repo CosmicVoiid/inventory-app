@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("./partials/head.ejs")%>
+	<body>
+		<%- include("./partials/nav.ejs")%>
+
+		<h1 class="main-header"><%= title%></h1>
+
+		<form class="item-form" action="" method="POST">
+			<label for="name">Item:</label>
+			<input type="text" name="name" id="name" placeholder="name" value="<%=
+			item===undefined ? "" : item.name %>" required="true"/>
+
+			<label for="description">Description:</label>
+			<input type="text" name="description" id="description"
+			placeholder="description" value="<%= item===undefined ? "" :
+			item.description %>" required="true"/>
+
+			<label for="item-category">Category:</label>
+			<select
+				name="category"
+				id="item-category"
+				placeholder="Select Category"
+				required="true"
+			>
+				<% if (selectedId !== null) { %> <% categories.forEach((category) => {
+				if (category._id.toString() === selectedId._id.toString()) { %>
+				<option value="<%= category._id%>" selected>
+					<%= category.name %>
+				</option>
+				<% } else { %>
+				<option value="<%= category._id%>"><%= category.name %></option>
+				<% }});} else { %> <% categories.forEach((category) => { %>
+				<option value="<%= category._id%>"><%= category.name %></option>
+				<% });} %>
+			</select>
+
+			<label for="price">Price:</label>
+			<input type="number" name="price" id="price" min="0" max="10000"
+			step="0.01" value="<%= item===undefined ? "" : item.price %>" required/>
+
+			<label for="in_stock">In Stock:</label>
+			<input type="number" name="in_stock" id="in_stock" min="0" max="10000"
+			value="<%= item===undefined ? "" : item.in_stock %>" required/>
+
+			<button class="category-form__submit-btn" type="submit">Submit</button>
+		</form>
+
+		<% if (errors) { %>
+		<ul>
+			<% errors.forEach(error => { %>
+			<li><%= error.msg %></li>
+			<% });%>
+		</ul>
+		<% }; %>
+	</body>
+</html>
