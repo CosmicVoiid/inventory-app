@@ -14,8 +14,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 //connect to mongodb
-const dbURI =
+const dev_dbURI =
 	"mongodb+srv://cosmicvoiid:swapna75710@sandbox.jjgww.mongodb.net/inventory_app?retryWrites=true&w=majority";
+const dbURI = process.env.MONGODB_URI || dev_dbURI;
+
 mongoose
 	.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 	.then((result) => {
