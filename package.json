@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "app",
     "devstart": "nodemon app"
   },
   "repository": {
