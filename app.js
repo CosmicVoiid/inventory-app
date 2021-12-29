@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+require("dotenv").config();
 const mongoose = require("mongoose");
 const async = require("async");
 const compression = require("compression");
@@ -14,8 +15,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 //connect to mongodb
-const dev_dbURI =
-	"mongodb+srv://cosmicvoiid:swapna75710@sandbox.jjgww.mongodb.net/inventory_app?retryWrites=true&w=majority";
+const dev_dbURI = process.env.MONGO_URI;
 const dbURI = process.env.MONGODB_URI || dev_dbURI;
 
 mongoose
